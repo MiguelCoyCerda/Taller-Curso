@@ -18,7 +18,7 @@ namespace sage.addons.Taller.Negocio.Mantes
     public partial class vehiculo : ewMante
     {
         /// <summary>
-        /// Indica si el documento está en uso por otro usuario
+        /// Indica si el documento está en uso por otro usuario.
         /// </summary>
         public bool _EnUso = false;
 
