@@ -87,10 +87,7 @@ namespace sage.addons.Taller
             _key = _key.ToLower().Trim();
 
             switch (_key)
-            {
-                case "vehiculo":
-                    loInstancia = new Negocio.Mantes.ManteExtVehiculoTaller(_mantePrincipal);
-                    break;
+            {          
                 default:
                     break;
             }
@@ -136,11 +133,7 @@ namespace sage.addons.Taller
                 _nombreForm = _formBase._Pantalla.ToLower().Trim();
 
             switch (_nombreForm)
-            {
-                case "frmvehiculo":
-                    case "vehiculo":
-                    Negocio.Mantes.FormManteExtVehiculoTaller formmanteextvehiculotaller = new Negocio.Mantes.FormManteExtVehiculoTaller((sage.ew.formul.Forms.FormMante)_formBase, this);
-                    break;
+            {              
                 default:
                     break;
             }

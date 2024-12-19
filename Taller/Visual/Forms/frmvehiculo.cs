@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using sage.addons.Taller.Negocio.Clases;
 using sage.ew.formul.Forms;
 
 namespace sage.addons.Taller.Visual.Forms
 {
     public partial class frmvehiculo : FormMante
     {
+        rev_vehiculo oRev_vehiculo = new rev_vehiculo();
 	    /// <summary>
         /// Inicializa una nueva instancia de la clase
         /// </summary>
@@ -83,7 +85,15 @@ namespace sage.addons.Taller.Visual.Forms
             ewnumericupdownPma.ReadOnly = bloquearControles;
             ewnumericupdownTara.ReadOnly = bloquearControles;
             txtObservaciones.ReadOnly = bloquearControles;
+            mantegridRevisiones._ReadOnly = bloquearControles;
 
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            _ewMante._AddManteTRel(oRev_vehiculo);
+            oRev_vehiculo._Grid = mantegridRevisiones;
         }
     }
 }

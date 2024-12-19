@@ -38,6 +38,7 @@ namespace sage.addons.Taller.Visual.Forms
             this.ewnumericupdownTara = new sage.ew.objetos.ewnumericupdown();
             this.lblObservaciones = new sage.ew.objetos.ewlabel();
             this.txtObservaciones = new sage.ew.objetos.ewtextbox();
+            this.mantegridRevisiones = new sage.ew.objetos.UserControls.Mantegrid();
             this.ewtcCodigoNombre.SuspendLayout();
             this.tabPageCodigoNombre.SuspendLayout();
             this.ewtcPaginas.SuspendLayout();
@@ -45,6 +46,7 @@ namespace sage.addons.Taller.Visual.Forms
             this._oToolStripContainer.SuspendLayout();
             this.ewPanelTituloLineaDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._oErrorProvider)).BeginInit();
+            this.tpPagina3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ewnumericupdownPma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ewnumericupdownTara)).BeginInit();
             this.SuspendLayout();
@@ -116,12 +118,12 @@ namespace sage.addons.Taller.Visual.Forms
             // 
             // ewPanelTituloLineaDetalles._Panel
             // 
-            this.ewPanelTituloLineaDetalles._Panel.Size = new System.Drawing.Size(464, 26);
-            this.ewPanelTituloLineaDetalles.Size = new System.Drawing.Size(464, 26);
+            this.ewPanelTituloLineaDetalles._Panel.Size = new System.Drawing.Size(411, 26);
+            this.ewPanelTituloLineaDetalles.Size = new System.Drawing.Size(411, 26);
             // 
             // ewLinea1
             // 
-            this.ewLinea1.Size = new System.Drawing.Size(478, 1);
+            this.ewLinea1.Size = new System.Drawing.Size(425, 1);
             // 
             // tpPagina2
             // 
@@ -136,10 +138,11 @@ namespace sage.addons.Taller.Visual.Forms
             // tpPagina3
             // 
             this.tpPagina3.BackColor = System.Drawing.SystemColors.Control;
+            this.tpPagina3.Controls.Add(this.mantegridRevisiones);
             this.tpPagina3.Font = new System.Drawing.Font("Arial", 9.5F);
             this.tpPagina3.Location = new System.Drawing.Point(4, 28);
             this.tpPagina3.Name = "tpPagina3";
-            this.tpPagina3.Size = new System.Drawing.Size(629, 197);
+            this.tpPagina3.Size = new System.Drawing.Size(576, 341);
             this.tpPagina3.TabIndex = 2;
             this.tpPagina3.Text = "Revisiones";
             // 
@@ -305,6 +308,30 @@ namespace sage.addons.Taller.Visual.Forms
             this.txtObservaciones.Size = new System.Drawing.Size(430, 155);
             this.txtObservaciones.TabIndex = 10;
             // 
+            // mantegridRevisiones
+            // 
+            this.mantegridRevisiones._Anadir_Location = new System.Drawing.Point(0, 0);
+            this.mantegridRevisiones._Anadir_Text = "Añadir";
+            this.mantegridRevisiones._Anadir_Tooltip = "";
+            this.mantegridRevisiones._Borrar_Location = new System.Drawing.Point(82, 221);
+            this.mantegridRevisiones._Borrar_Text = "Borrar";
+            this.mantegridRevisiones._Borrar_Tooltip = "";
+            this.mantegridRevisiones._CurrentCel = null;
+            this.mantegridRevisiones._Insertar_Text = "Insertar";
+            this.mantegridRevisiones._Insertar_Tooltip = "";
+            this.mantegridRevisiones._InsertarConIntro = true;
+            this.mantegridRevisiones._ManteTRel = null;
+            this.mantegridRevisiones._MostrarBrowMante = false;
+            this.mantegridRevisiones._PrintTitle = null;
+            this.mantegridRevisiones._ReadOnly = false;
+            this.mantegridRevisiones._RecuadroVisible = true;
+            this.mantegridRevisiones._Tactil = false;
+            this.mantegridRevisiones._Texto_Borrar_Registro = "";
+            this.mantegridRevisiones.Location = new System.Drawing.Point(8, 14);
+            this.mantegridRevisiones.Name = "mantegridRevisiones";
+            this.mantegridRevisiones.Size = new System.Drawing.Size(560, 308);
+            this.mantegridRevisiones.TabIndex = 0;
+            // 
             // frmvehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +350,7 @@ namespace sage.addons.Taller.Visual.Forms
             this._oToolStripContainer.PerformLayout();
             this.ewPanelTituloLineaDetalles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._oErrorProvider)).EndInit();
+            this.tpPagina3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ewnumericupdownPma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ewnumericupdownTara)).EndInit();
             this.ResumeLayout(false);
@@ -341,5 +369,6 @@ namespace sage.addons.Taller.Visual.Forms
         private sage.ew.objetos.ewnumericupdown ewnumericupdownTara;
         private ew.objetos.ewtextbox txtObservaciones;
         private ew.objetos.ewlabel lblObservaciones;
+        private ew.objetos.UserControls.Mantegrid mantegridRevisiones;
     }
 }
