@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF6B1B15-5EDC-42CC-BAB4-6EAF0DD256D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>sage.addons.Taller</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Librerias\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Librerias\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>sage.addons.Taller</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="sage.50, Version=50.7830.0.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\librerias\sage.50.exe</HintPath>
+    </Reference>
+    <Reference Include="sage.ew.db">
+      <HintPath>sage.ew.db.dll</HintPath>
+    </Reference>
+    <Reference Include="sage.ew.images">
+      <HintPath>sage.ew.images.dll</HintPath>
+    </Reference>
+    <Reference Include="sage.ew.reports">
+      <HintPath>sage.ew.reports.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Negocio\Clases\classConfig.cs" />
+    <Compile Include="Negocio\Clases\rev_vehiculo.cs" />
+    <Compile Include="Negocio\Mantes\conductores.cs" />
+    <Compile Include="Negocio\Mantes\ManteExtVehiculoTaller.cs" />
+    <Compile Include="Negocio\Mantes\revision.cs" />
+    <Compile Include="Negocio\Mantes\vehiculo.cs" />
+    <Compile Include="SageAddons.cs" />
+    <Compile Include="Visual\Forms\frmconductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmconductores.Designer.cs">
+      <DependentUpon>frmconductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmLibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmLibre.Designer.cs">
+      <DependentUpon>frmLibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmrevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmrevision.Designer.cs">
+      <DependentUpon>frmrevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmvehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmvehiculo.Designer.cs">
+      <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\UserControls\browserconductores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\browserrevision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\browservehiculo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\manteconductores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\manterevision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\mantevehiculo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\TallerVEHICULO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtconductores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtconductoresDesdeHasta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtrevision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtrevisionDesdeHasta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtvehiculo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\txtvehiculoDesdeHasta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\usercontrolConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\usercontrolConfig.designer.cs">
+      <DependentUpon>usercontrolConfig.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\DA\" />
+    <Folder Include="DataAccess\Interfaces\" />
+    <Folder Include="Negocio\Documentos\" />
+    <Folder Include="Negocio\Enums\" />
+    <Folder Include="Negocio\Interficies\" />
+    <Folder Include="Negocio\Listados\" />
+    <Folder Include="sage.ew.reports\personalizados\" />
+    <Folder Include="Visual\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <Content Include="sage.ew.reports\base\template.template" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Visual\Forms\frmconductores.resx">
+      <DependentUpon>frmconductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmLibre.resx">
+      <DependentUpon>frmLibre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmrevision.resx">
+      <DependentUpon>frmrevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmvehiculo.resx">
+      <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\UserControls\usercontrolConfig.resx">
+      <DependentUpon>usercontrolConfig.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

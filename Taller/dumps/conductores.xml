@@ -1,0 +1,60 @@
+<MantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Nombre>conductores</Nombre>
+  <Titulo>Mantenimiento de conductores</Titulo>
+  <TextoMenu>Conductores</TextoMenu>
+</ManteProperties>
+</MantePropertiesBloc>
+<PaginaMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfPaginaManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PaginaManteProperties>
+    <Nombre>tpGeneral</Nombre>
+    <Titulo>Detalles</Titulo>
+  </PaginaManteProperties>
+</ArrayOfPaginaManteProperties>
+</PaginaMantePropertiesBloc>
+<CodigoNombreMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfCodigoNombreManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CodigoNombreManteProperties>
+    <Nombre>CODIGO</Nombre>
+    <TituloCampo>Código</TituloCampo>
+  </CodigoNombreManteProperties>
+  <CodigoNombreManteProperties>
+    <Nombre>NOMBRE</Nombre>
+    <TituloCampo>Nombre</TituloCampo>
+  </CodigoNombreManteProperties>
+</ArrayOfCodigoNombreManteProperties>
+</CodigoNombreMantePropertiesBloc>
+<ObjectsMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfObjectsManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsManteProperties>
+    <Nombre>TELEFONO</Nombre>
+    <Visible>true</Visible>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>TELEFONO</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>FECHA_CARNET</Nombre>
+    <Visible>true</Visible>
+    <Top>46</Top>
+    <Left>20</Left>
+    <ControlLeft>115</ControlLeft>
+    <ObjectType>DateTimePicker</ObjectType>
+    <TituloCampo>FECHA_CARNET</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>OBSERVACIONES</Nombre>
+    <Visible>true</Visible>
+    <Top>76</Top>
+    <Left>20</Left>
+    <ControlLeft>123</ControlLeft>
+    <TituloCampo>OBSERVACIONES</TituloCampo>
+  </ObjectsManteProperties>
+</ArrayOfObjectsManteProperties>
+</ObjectsMantePropertiesBloc>
