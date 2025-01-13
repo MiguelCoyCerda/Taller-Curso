@@ -63,6 +63,9 @@ namespace sage.addons.Taller
 
             switch (tcClass)
             {
+                case "sage.addons.Taller.Visual.Forms.frmHojaCarga":
+                    return new Visual.UserControls.ListasPreviasHojaCarga(tcClass, toTipoObjeto, tcPantalla);
+                    break;
                 default:
                     break;
             }

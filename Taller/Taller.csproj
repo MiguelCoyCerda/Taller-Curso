@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Negocio\Clases\classConfig.cs" />
     <Compile Include="Negocio\Clases\rev_vehiculo.cs" />
+    <Compile Include="Negocio\Documentos\HojaCarga.cs" />
     <Compile Include="Negocio\Mantes\conductores.cs" />
     <Compile Include="Negocio\Mantes\ManteExtVehiculoTaller.cs" />
     <Compile Include="Negocio\Mantes\revision.cs" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="Visual\Forms\frmconductores.Designer.cs">
       <DependentUpon>frmconductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmHojaCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmHojaCarga.Designer.cs">
+      <DependentUpon>frmHojaCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="Visual\Forms\frmLibre.cs">
       <SubType>Form</SubType>
@@ -97,6 +104,12 @@
     </Compile>
     <Compile Include="Visual\UserControls\browservehiculo.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\btBrowHojaCarga.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\ListasPreviasHojaCarga.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Visual\UserControls\manteconductores.cs">
       <SubType>Component</SubType>
@@ -138,7 +151,6 @@
   <ItemGroup>
     <Folder Include="DataAccess\DA\" />
     <Folder Include="DataAccess\Interfaces\" />
-    <Folder Include="Negocio\Documentos\" />
     <Folder Include="Negocio\Enums\" />
     <Folder Include="Negocio\Interficies\" />
     <Folder Include="Negocio\Listados\" />
@@ -152,6 +164,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Visual\Forms\frmconductores.resx">
       <DependentUpon>frmconductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmHojaCarga.resx">
+      <DependentUpon>frmHojaCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\Forms\frmLibre.resx">
       <DependentUpon>frmLibre.cs</DependentUpon>

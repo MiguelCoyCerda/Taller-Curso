@@ -1,0 +1,152 @@
+<MantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Nombre>c_hojacarga</Nombre>
+  <Titulo>Mantenimiento de c_hojacarga</Titulo>
+  <TextoMenu>Documento c_hojacarga</TextoMenu>
+</ManteProperties>
+</MantePropertiesBloc>
+<PaginaMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfPaginaManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PaginaManteProperties>
+    <Nombre>tpGeneral</Nombre>
+    <Titulo>Detalles</Titulo>
+  </PaginaManteProperties>
+</ArrayOfPaginaManteProperties>
+</PaginaMantePropertiesBloc>
+<CodigoNombreMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfCodigoNombreManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CodigoNombreManteProperties>
+    <Nombre>CODIGO</Nombre>
+    <TituloCampo>Código</TituloCampo>
+  </CodigoNombreManteProperties>
+  <CodigoNombreManteProperties>
+    <Nombre>NOMBRE</Nombre>
+    <TituloCampo>Nombre</TituloCampo>
+  </CodigoNombreManteProperties>
+</ArrayOfCodigoNombreManteProperties>
+</CodigoNombreMantePropertiesBloc>
+<ObjectsMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfObjectsManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsManteProperties>
+    <Nombre>EJERCICIO</Nombre>
+    <Tab>0</Tab>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>EJERCICIO</TituloCampo>
+    <EsFiltro>true</EsFiltro>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>EMPRESA</Nombre>
+    <Tab>0</Tab>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>EMPRESA</TituloCampo>
+    <EsFiltro>true</EsFiltro>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>NUMERO</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>Número</TituloCampo>
+    <EsFiltro>true</EsFiltro>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>FECHA</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>46</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <ObjectType>DateTimePicker</ObjectType>
+    <TituloCampo>Fecha</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>VEHICULO</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>76</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <ObjectType>TxtCodLabel</ObjectType>
+    <TxtCodLabel>sage.addons.Taller.Visual.UserControls.txtvehiculo</TxtCodLabel>
+    <TituloCampo>Vehículo</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>CLIENTE</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>106</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <ObjectType>TxtCodLabel</ObjectType>
+    <TxtCodLabel>sage.ew.txtbox.UserControls.txtCliente</TxtCodLabel>
+    <TituloCampo>Cliente</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>OBSERVACIONES</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>136</Top>
+    <Left>20</Left>
+    <ControlLeft>110</ControlLeft>
+    <TituloCampo>Observaciones</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>VENDEDOR</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>166</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <ObjectType>TxtCodLabel</ObjectType>
+    <TxtCodLabel>sage.ew.txtbox.UserControls.txtVendedor</TxtCodLabel>
+    <TituloCampo>Vendedor</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>ALBARAN</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>196</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>Albarán</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>SERIE</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>226</Top>
+    <Left>20</Left>
+    <ControlLeft>102</ControlLeft>
+    <TituloCampo>Serie Albarán</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>EJEERCICIOALBARAN</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>256</Top>
+    <Left>20</Left>
+    <ControlLeft>121</ControlLeft>
+    <TituloCampo>Ejercicio Albarán</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>FECHAALBARAN</Nombre>
+    <Visible>true</Visible>
+    <Tab>0</Tab>
+    <Top>286</Top>
+    <Left>20</Left>
+    <ControlLeft>106</ControlLeft>
+    <ObjectType>DateTimePicker</ObjectType>
+    <TituloCampo>Fecha Albarán</TituloCampo>
+  </ObjectsManteProperties>
+</ArrayOfObjectsManteProperties>
+</ObjectsMantePropertiesBloc>

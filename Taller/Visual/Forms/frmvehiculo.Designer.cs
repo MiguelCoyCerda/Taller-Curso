@@ -30,6 +30,7 @@ namespace sage.addons.Taller.Visual.Forms
         {
             this.tpPagina2 = new sage.ew.objetos.ewTabPage();
             this.tpPagina3 = new sage.ew.objetos.ewTabPage();
+            this.mantegridRevisiones = new sage.ew.objetos.UserControls.Mantegrid();
             this.ewlabelMatricula = new sage.ew.objetos.ewlabel();
             this.ewtextboxMatricula = new sage.ew.objetos.ewtextbox();
             this.ewlabelPma = new sage.ew.objetos.ewlabel();
@@ -38,7 +39,6 @@ namespace sage.addons.Taller.Visual.Forms
             this.ewnumericupdownTara = new sage.ew.objetos.ewnumericupdown();
             this.lblObservaciones = new sage.ew.objetos.ewlabel();
             this.txtObservaciones = new sage.ew.objetos.ewtextbox();
-            this.mantegridRevisiones = new sage.ew.objetos.UserControls.Mantegrid();
             this.ewtcCodigoNombre.SuspendLayout();
             this.tabPageCodigoNombre.SuspendLayout();
             this.ewtcPaginas.SuspendLayout();
@@ -118,12 +118,12 @@ namespace sage.addons.Taller.Visual.Forms
             // 
             // ewPanelTituloLineaDetalles._Panel
             // 
-            this.ewPanelTituloLineaDetalles._Panel.Size = new System.Drawing.Size(411, 26);
-            this.ewPanelTituloLineaDetalles.Size = new System.Drawing.Size(411, 26);
+            this.ewPanelTituloLineaDetalles._Panel.Size = new System.Drawing.Size(358, 26);
+            this.ewPanelTituloLineaDetalles.Size = new System.Drawing.Size(358, 26);
             // 
             // ewLinea1
             // 
-            this.ewLinea1.Size = new System.Drawing.Size(425, 1);
+            this.ewLinea1.Size = new System.Drawing.Size(372, 1);
             // 
             // tpPagina2
             // 
@@ -131,7 +131,7 @@ namespace sage.addons.Taller.Visual.Forms
             this.tpPagina2.Font = new System.Drawing.Font("Arial", 9.5F);
             this.tpPagina2.Location = new System.Drawing.Point(4, 28);
             this.tpPagina2.Name = "tpPagina2";
-            this.tpPagina2.Size = new System.Drawing.Size(629, 197);
+            this.tpPagina2.Size = new System.Drawing.Size(576, 341);
             this.tpPagina2.TabIndex = 1;
             this.tpPagina2.Text = "Conductores";
             // 
@@ -145,6 +145,30 @@ namespace sage.addons.Taller.Visual.Forms
             this.tpPagina3.Size = new System.Drawing.Size(576, 341);
             this.tpPagina3.TabIndex = 2;
             this.tpPagina3.Text = "Revisiones";
+            // 
+            // mantegridRevisiones
+            // 
+            this.mantegridRevisiones._Anadir_Location = new System.Drawing.Point(0, 0);
+            this.mantegridRevisiones._Anadir_Text = "Añadir";
+            this.mantegridRevisiones._Anadir_Tooltip = "";
+            this.mantegridRevisiones._Borrar_Location = new System.Drawing.Point(82, 221);
+            this.mantegridRevisiones._Borrar_Text = "Borrar";
+            this.mantegridRevisiones._Borrar_Tooltip = "";
+            this.mantegridRevisiones._CurrentCel = null;
+            this.mantegridRevisiones._Insertar_Text = "Insertar";
+            this.mantegridRevisiones._Insertar_Tooltip = "";
+            this.mantegridRevisiones._InsertarConIntro = true;
+            this.mantegridRevisiones._ManteTRel = null;
+            this.mantegridRevisiones._MostrarBrowMante = false;
+            this.mantegridRevisiones._PrintTitle = null;
+            this.mantegridRevisiones._ReadOnly = false;
+            this.mantegridRevisiones._RecuadroVisible = true;
+            this.mantegridRevisiones._Tactil = false;
+            this.mantegridRevisiones._Texto_Borrar_Registro = "";
+            this.mantegridRevisiones.Location = new System.Drawing.Point(8, 14);
+            this.mantegridRevisiones.Name = "mantegridRevisiones";
+            this.mantegridRevisiones.Size = new System.Drawing.Size(560, 308);
+            this.mantegridRevisiones.TabIndex = 0;
             // 
             // ewlabelMatricula
             // 
@@ -307,30 +331,6 @@ namespace sage.addons.Taller.Visual.Forms
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(430, 155);
             this.txtObservaciones.TabIndex = 10;
-            // 
-            // mantegridRevisiones
-            // 
-            this.mantegridRevisiones._Anadir_Location = new System.Drawing.Point(0, 0);
-            this.mantegridRevisiones._Anadir_Text = "Añadir";
-            this.mantegridRevisiones._Anadir_Tooltip = "";
-            this.mantegridRevisiones._Borrar_Location = new System.Drawing.Point(82, 221);
-            this.mantegridRevisiones._Borrar_Text = "Borrar";
-            this.mantegridRevisiones._Borrar_Tooltip = "";
-            this.mantegridRevisiones._CurrentCel = null;
-            this.mantegridRevisiones._Insertar_Text = "Insertar";
-            this.mantegridRevisiones._Insertar_Tooltip = "";
-            this.mantegridRevisiones._InsertarConIntro = true;
-            this.mantegridRevisiones._ManteTRel = null;
-            this.mantegridRevisiones._MostrarBrowMante = false;
-            this.mantegridRevisiones._PrintTitle = null;
-            this.mantegridRevisiones._ReadOnly = false;
-            this.mantegridRevisiones._RecuadroVisible = true;
-            this.mantegridRevisiones._Tactil = false;
-            this.mantegridRevisiones._Texto_Borrar_Registro = "";
-            this.mantegridRevisiones.Location = new System.Drawing.Point(8, 14);
-            this.mantegridRevisiones.Name = "mantegridRevisiones";
-            this.mantegridRevisiones.Size = new System.Drawing.Size(560, 308);
-            this.mantegridRevisiones.TabIndex = 0;
             // 
             // frmvehiculo
             // 
