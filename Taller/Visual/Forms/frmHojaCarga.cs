@@ -11,13 +11,23 @@ using sage.ew.formul.Forms;
 using sage.ew.formul;
 using sage.ew.functions;
 using sage.ew.cliente;
+using sage.ew.db;
+using sage.ew.global;
+using sage.ew.docventatpv;
+using sage.ew.serie;
+using static sage.ew.listados.Clases.Listados;
+using sage.ew.listados.Clases;
+using sage.ew.docscompra;
+using sage.ew.interficies;
 
 
 namespace sage.addons.Taller.Visual.Forms
 {
     public partial class frmHojaCarga : FormBaseDocumento
     {
-		/// <summary>
+        private string _empresa = EW_GLOBAL._GetVariable("wc_empresa").ToString();
+        private string _ejercicio = EW_GLOBAL._GetVariable("wc_any").ToString();
+        /// <summary>
         /// Clase de negocio del documento
         /// </summary>
         public dynamic Documento
@@ -334,18 +344,198 @@ namespace sage.addons.Taller.Visual.Forms
         {
 
         }
-
+        /// <summary>
+        /// Evento al validar el cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCliente_Validated(object sender, EventArgs e)
         {
             string Codcliente = txtCliente._Codigo;
-            string nombreCliente = txtCliente._DescripcionCodigo.Trim();
-            FUNCTIONS._MessageBox($"Hola {nombreCliente}");
+            //string nombreCliente = txtCliente._DescripcionCodigo.Trim();
+            
+            string sql = "SELECT * FROM "+ DB.SQLDatabase("gestion","clientes") +" WHERE codigo = " + DB.SQLString(Codcliente) + "";
+            string vendedor = string.Empty;
+            string observaciones = string.Empty;
+            //vendedor = DB._ValorSQL(sql);
+            DataTable dt = new DataTable();
+            bool ok = DB.SQLExec(sql, ref dt);
+            if (ok && dt.Rows.Count>0)
+            {
+                vendedor = dt.Rows[0]["vendedor"].ToString();
+                observaciones= dt.Rows[0]["observacio"].ToString();
+            }
+            
 
-            Cliente ocliente = new Cliente(Codcliente);
-            ocliente._Load();
-            string vendedor = ocliente._Vendedor;
-            Vendedor ovendedor = new Vendedor(vendedor);
-            FUNCTIONS._MessageBox($"el cliente {nombreCliente} tiene el vendedor asignado {ovendedor._Nombre}");
+            //metodo 1
+            if (string.IsNullOrEmpty(vendedor))
+            {
+                Vendedor ovendedor = new Vendedor(vendedor);
+                string nombreVendedor = ovendedor._Nombre;
+                ok = ovendedor._Existe_Registro();
+                if (ok)
+                {
+                    txtVendedor._Codigo = vendedor;
+                    this.Documento._Vendedor = vendedor;
+                }
+                
+            }
+
+            //metodo 2
+            if (!string.IsNullOrEmpty(vendedor))
+            {
+                Cliente ocliente = new Cliente(Codcliente);
+                //ocliente._Load();
+                //ocliente._Codigo = Codcliente;
+                vendedor = ocliente._Vendedor;
+                Vendedor ovendedor = new Vendedor(vendedor);
+                ok = ovendedor._Existe_Registro();
+                if (ok)
+                {
+                    txtVendedor._Codigo = vendedor;
+                }
+                observaciones = ocliente._Observaciones;
+
+                if (!string.IsNullOrEmpty(observaciones))
+                {
+                    ewtextboxObservaciones.Text = observaciones;
+                }
+            }
+            
+
+
+        }
+
+        private void btn_albaran_Click(object sender, EventArgs e)
+        {
+            //leemos todos los datos de este documento y vamos a crear un albarán de venta para el cliente
+            string empresa = this._cEmpresa;
+            string tarifaPredet= EW_GLOBAL._GetVariable("wc_tarifapret").ToString();
+            string seriePredet = EW_GLOBAL._GetVariable("wc_letra").ToString();
+
+            if (!string.IsNullOrEmpty(ewtextboxAlbaran.Text))
+            {
+                //mostramos
+                Listados oListado = new Listados();
+                oListado._Navegar(Listados.Pantalla.AlbaVen, 
+                    new List<string> { { empresa }, { ewtextboxAlbaran.Text }, { ewtextboxSerie.Text } });
+            }
+            else
+            {
+                //Creamos el albarán
+                string fopa = string.Empty;
+                string observaciones = "Albarán generado desde la hoja de carga nº " + ewtextboxNumero.Text + " de fecha " + txtFecha.Text + " para el cliente " + txtCliente._Codigo + " - " + txtCliente._DescripcionCodigo + " con el vendedor " + txtVendedor._Codigo + " - " + txtVendedor._DescripcionCodigo + " y el vehículo " + txtVehiculo._Codigo + " - " + txtVehiculo._DescripcionCodigo +"";
+
+                Cliente ocliente = new Cliente(txtCliente._Codigo);
+                fopa = ocliente._FormaPago;
+
+                if (string.IsNullOrEmpty(fopa))
+                {
+                    fopa = EW_GLOBAL._GetVariable("wc_fopa").ToString();
+                }
+                if (string.IsNullOrEmpty(fopa))
+                {
+                    fopa = "01";
+                }
+
+
+                string cliente = txtCliente._Codigo;
+                string vendedor = txtVendedor._Codigo;
+                DataTable dt_detalle = new DataTable();
+                string sql = $@"SELECT articulo, unidades FROM  {DB.SQLDatabase("taller", "d_hojacarga")} 
+                WHERE numero = {DB.SQLString(ewtextboxNumero.Text)} 
+                and empresa = {DB.SQLString(_empresa)}
+                and ejercicio = {DB.SQLString(_ejercicio)}";
+                bool ok = DB.SQLExec(sql, ref dt_detalle);
+                if (ok && dt_detalle.Rows.Count > 0)
+                {
+                    //creamos el albarán
+                    ewDocVentaTPV oCabecera = new ewDocVentaTPV();
+                    oCabecera._New(_empresa);
+                    oCabecera._Cabecera._Cliente = cliente;
+                    oCabecera._Cabecera._Vendedor = vendedor;
+                    oCabecera._Cabecera._Tarifa = tarifaPredet;
+                    oCabecera._Cabecera._FormaPago = fopa;
+                    oCabecera._Cabecera._Observacio = observaciones;
+
+                    //recorremos el detalle
+                    for (int i = 0; i < dt_detalle.Rows.Count; i++)
+                    {
+                        ewDocVentaLinTPV oLinea = oCabecera._AddLinea();
+                        oLinea._Articulo = dt_detalle.Rows[i]["articulo"].ToString();
+                        oLinea._Unidades = Convert.ToDecimal(dt_detalle.Rows[i]["unidades"]);
+                        oLinea._Save();
+                    }
+                    ok = oCabecera._Save();
+
+                    if (ok)
+                    {
+                        FUNCTIONS._MessageBox("Albarán creado correctamente");
+                        ewtextboxAlbaran.Text = oCabecera._Numero;
+                        ewtextboxSerie.Text = oCabecera._Letra;
+                        ewtextboxEjeercicioalbaran.Text = oCabecera._Cabecera._Ejercicio;
+                        this.Documento._Albaran = oCabecera._Numero;
+                        this.Documento._Serie = oCabecera._Letra;
+                        this.Documento._Ejeercicioalbaran = oCabecera._Cabecera._Ejercicio;
+
+                    }
+                }
+            }
+
+
+            
+
+            //si ya está creado el albarán asociado a este documento, lo mostramos
+
+        }
+
+        private void ewbutton1_Click(object sender, EventArgs e)
+        {
+            //generamos pediod de compra
+            string empresa = this._cEmpresa;
+            string proveedor = "40000001";
+
+            DataTable dt_detalle = new DataTable();
+            string sql = $@"SELECT articulo, unidades FROM  {DB.SQLDatabase("taller", "d_hojacarga")} 
+                WHERE numero = {DB.SQLString(ewtextboxNumero.Text)} 
+                and empresa = {DB.SQLString(_empresa)}
+                and ejercicio = {DB.SQLString(_ejercicio)}";
+            bool ok = DB.SQLExec(sql, ref dt_detalle);
+
+            if(ok && dt_detalle.Rows.Count > 0)
+            {
+                //cabecera
+                ewDocCompraPEDIDO oCompra = new ewDocCompraPEDIDO();
+                oCompra._New(empresa);
+                oCompra._Cabecera._Proveedor = proveedor;
+                oCompra._Fecha = Convert.ToDateTime(ewdatetimeFechaalbaran.Text.ToString());
+                oCompra._Cabecera._FormaPago= "01";
+                oCompra._Cabecera._Observacio = "Pedido de compra generado desde la hoja de carga nº " + ewtextboxNumero.Text + " de fecha " + txtFecha.Text + "";
+                oCompra._Cabecera._Almacen = EW_GLOBAL._Empresa._AlmacenPorDefecto;
+
+                //detalle
+                for (int i=0; i<dt_detalle.Rows.Count; i++)
+                {
+                    ewDocCompraLinPEDIDO olinea = oCompra._AddLinea();
+                    olinea._Articulo = dt_detalle.Rows[i]["articulo"].ToString();
+                    olinea._Unidades = Convert.ToDecimal(dt_detalle.Rows[i]["unidades"]);
+                    olinea._Precio = 100;
+                    olinea._Save();
+                }
+                ok = oCompra._Save();
+
+                if (ok)
+                {
+                   FUNCTIONS._MessageBox("Pedido de compra creado correctamente");
+                }
+                else
+                {
+                   FUNCTIONS._MessageBox("Error al crear el pedido de compra");
+                }
+            }
+
+            
+
         }
     }
 }

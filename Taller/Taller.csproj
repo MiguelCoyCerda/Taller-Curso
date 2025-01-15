@@ -62,6 +62,7 @@
     <Compile Include="Negocio\Clases\rev_vehiculo.cs" />
     <Compile Include="Negocio\Documentos\HojaCarga.cs" />
     <Compile Include="Negocio\Mantes\conductores.cs" />
+    <Compile Include="Negocio\Mantes\ManteExtArticuloTaller.cs" />
     <Compile Include="Negocio\Mantes\ManteExtVehiculoTaller.cs" />
     <Compile Include="Negocio\Mantes\revision.cs" />
     <Compile Include="Negocio\Mantes\vehiculo.cs" />
@@ -120,8 +121,14 @@
     <Compile Include="Visual\UserControls\mantevehiculo.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Visual\UserControls\TallerARTICULO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Visual\UserControls\TallerVEHICULO.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\ToolStripAddonButton1CLIENTES.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Visual\UserControls\txtconductores.cs">
       <SubType>UserControl</SubType>
@@ -176,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\Forms\frmvehiculo.resx">
       <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\UserControls\TallerARTICULO.resx">
+      <DependentUpon>TallerARTICULO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\UserControls\usercontrolConfig.resx">
       <DependentUpon>usercontrolConfig.cs</DependentUpon>

@@ -51,6 +51,8 @@ namespace sage.addons.Taller.Visual.Forms
             this.ewlabel1 = new sage.ew.objetos.ewlabel();
             this.btBrowHojaCarga1 = new sage.addons.Taller.Visual.UserControls.btBrowHojaCarga();
             this.txtVehiculo = new sage.addons.Taller.Visual.UserControls.txtvehiculo();
+            this.btn_albaran = new sage.ew.objetos.ewbutton();
+            this.ewbutton1 = new sage.ew.objetos.ewbutton();
             this.ewPanelBorderCabecera._Panel.SuspendLayout();
             this.ewPanelContenido.SuspendLayout();
             this.ewpanelLineas.SuspendLayout();
@@ -104,6 +106,8 @@ namespace sage.addons.Taller.Visual.Forms
             // 
             // ewPanelContenido
             // 
+            this.ewPanelContenido.Controls.Add(this.ewbutton1);
+            this.ewPanelContenido.Controls.Add(this.btn_albaran);
             this.ewPanelContenido.Controls.Add(this.ewlabelNumero);
             this.ewPanelContenido.Controls.Add(this.ewtextboxNumero);
             this.ewPanelContenido.Controls.Add(this.panel1);
@@ -132,10 +136,12 @@ namespace sage.addons.Taller.Visual.Forms
             this.ewPanelContenido.Controls.SetChildIndex(this.panel1, 0);
             this.ewPanelContenido.Controls.SetChildIndex(this.ewtextboxNumero, 0);
             this.ewPanelContenido.Controls.SetChildIndex(this.ewlabelNumero, 0);
+            this.ewPanelContenido.Controls.SetChildIndex(this.btn_albaran, 0);
+            this.ewPanelContenido.Controls.SetChildIndex(this.ewbutton1, 0);
             // 
             // lbEnUso
             // 
-            this.lbEnUso.Location = new System.Drawing.Point(1196, 20);
+            this.lbEnUso.Location = new System.Drawing.Point(819, 21);
             // 
             // txtFecha
             // 
@@ -520,6 +526,7 @@ namespace sage.addons.Taller.Visual.Forms
             this.btOpciones.Text = "Opciones";
             this.btOpciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btOpciones.UseVisualStyleBackColor = true;
+            this.btOpciones.Visible = false;
             this.btOpciones.Click += new System.EventHandler(this.btOpciones_Click);
             // 
             // panel1
@@ -606,6 +613,38 @@ namespace sage.addons.Taller.Visual.Forms
             this.txtVehiculo.Size = new System.Drawing.Size(466, 30);
             this.txtVehiculo.TabIndex = 7;
             // 
+            // btn_albaran
+            // 
+            this.btn_albaran._Localizacion = sage.ew.interficies.LocalizacionOpcion.Bottom;
+            this.btn_albaran._PropiedadesDeEstilos._ColorUnderlineEntering = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(192)))), ((int)(((byte)(163)))));
+            this.btn_albaran._PropiedadesDeEstilos._ColorUnderlineSelected = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.btn_albaran._Tooltip = "";
+            this.btn_albaran.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_albaran.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btn_albaran.Location = new System.Drawing.Point(954, 87);
+            this.btn_albaran.Name = "btn_albaran";
+            this.btn_albaran.Size = new System.Drawing.Size(345, 41);
+            this.btn_albaran.TabIndex = 82;
+            this.btn_albaran.Text = "Ver / Generar albarán de venta";
+            this.btn_albaran.UseVisualStyleBackColor = false;
+            this.btn_albaran.Click += new System.EventHandler(this.btn_albaran_Click);
+            // 
+            // ewbutton1
+            // 
+            this.ewbutton1._Localizacion = sage.ew.interficies.LocalizacionOpcion.Bottom;
+            this.ewbutton1._PropiedadesDeEstilos._ColorUnderlineEntering = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(192)))), ((int)(((byte)(163)))));
+            this.ewbutton1._PropiedadesDeEstilos._ColorUnderlineSelected = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+            this.ewbutton1._Tooltip = "";
+            this.ewbutton1.BackColor = System.Drawing.Color.Gainsboro;
+            this.ewbutton1.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.ewbutton1.Location = new System.Drawing.Point(954, 18);
+            this.ewbutton1.Name = "ewbutton1";
+            this.ewbutton1.Size = new System.Drawing.Size(345, 41);
+            this.ewbutton1.TabIndex = 83;
+            this.ewbutton1.Text = "Generar Pedido compra";
+            this.ewbutton1.UseVisualStyleBackColor = false;
+            this.ewbutton1.Click += new System.EventHandler(this.ewbutton1_Click);
+            // 
             // frmHojaCarga
             // 
             this._MostrarAccesoFavoritos = false;
@@ -658,5 +697,7 @@ namespace sage.addons.Taller.Visual.Forms
 		private sage.ew.objetos.ewbutton btOpciones;
         private System.Windows.Forms.Panel panel1;
         private ew.objetos.ewlabel ewlabel1;
+        private ew.objetos.ewbutton btn_albaran;
+        private ew.objetos.ewbutton ewbutton1;
     }
 }

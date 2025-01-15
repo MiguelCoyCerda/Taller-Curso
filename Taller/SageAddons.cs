@@ -91,6 +91,9 @@ namespace sage.addons.Taller
 
             switch (_key)
             {          
+                case "articulo":
+                    loInstancia = new Negocio.Mantes.ManteExtArticuloTaller(_mantePrincipal);
+                    break;
                 default:
                     break;
             }
@@ -137,6 +140,14 @@ namespace sage.addons.Taller
 
             switch (_nombreForm)
             {              
+                case "frmarticulo":
+                    case "articulo":
+                    Negocio.Mantes.FormManteExtArticuloTaller formmanteextarticulotaller = new Negocio.Mantes.FormManteExtArticuloTaller((sage.ew.formul.Forms.FormMante)_formBase, this);
+                    break;
+                case "frmclientes":
+                case "clientes":
+                    //_formBase._InsertarObjetoAddon(new ToolStripAddonButton1CLIENTES());
+                    break;
                 default:
                     break;
             }

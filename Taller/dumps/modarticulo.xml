@@ -1,0 +1,48 @@
+<ModMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ModManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Nombre>ARTICULO</Nombre>
+  <NombreTabla>articulo_adi</NombreTabla>
+  <Titulo>ARTICULO</Titulo>
+  <TextoMenu>Menú articulo_adi</TextoMenu>
+</ModManteProperties>
+</ModMantePropertiesBloc>
+<ObjectsMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfObjectsManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsManteProperties>
+    <Nombre>ARTICULO</Nombre>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>ARTICULO</TituloCampo>
+    <EsFiltro>true</EsFiltro>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>REVISION</Nombre>
+    <Visible>true</Visible>
+    <Top>46</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <ObjectType>TxtCodLabel</ObjectType>
+    <TxtCodLabel>sage.addons.Taller.Visual.UserControls.txtrevision</TxtCodLabel>
+    <TituloCampo>Revisión</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>LIBRE1</Nombre>
+    <Visible>true</Visible>
+    <Top>76</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>LIBRE1</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>LIBRE2</Nombre>
+    <Visible>true</Visible>
+    <Top>106</Top>
+    <Left>20</Left>
+    <ControlLeft>100</ControlLeft>
+    <TituloCampo>LIBRE2</TituloCampo>
+  </ObjectsManteProperties>
+</ArrayOfObjectsManteProperties>
+</ObjectsMantePropertiesBloc>
