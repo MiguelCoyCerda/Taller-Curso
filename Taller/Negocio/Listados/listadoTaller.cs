@@ -61,7 +61,7 @@ namespace sage.addons.Taller.Negocio.Listados
             string sql = $"select * from {DB.SQLDatabase("articulo")}";
             DB.SQLExec(sql, ref ldtResult);
 
-            //git compartir a rbrios92@gmail.com 
+            //git compartir a rbrios92@gmail.com l
 
             return ldtResult;
         }
