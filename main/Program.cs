@@ -39,10 +39,10 @@ namespace main
 			
 			
             // copiar la libreria del add-on
-            FUNCTIONS._CopiarLibreriasAddons(@"c:\sage50\sage50serv", @"C:\Sage50\Sage50Term"); 
+            FUNCTIONS._CopiarLibreriasAddons(@"c:\sage50_3\sage50serv", @"C:\Sage50_3\Sage50Term"); 
 
             // conexión a Sage 50
-            main_s50.Connect(@"C:\Sage50\Sage50Term", "SUPERVISOR", "1"); 
+            main_s50.Connect(@"C:\Sage50_3\Sage50Term", "SUPERVISOR", "1"); 
 
             // presentación del desktop
             main_s50._Show();

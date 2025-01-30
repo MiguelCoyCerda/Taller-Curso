@@ -61,6 +61,7 @@
     <Compile Include="Negocio\Clases\classConfig.cs" />
     <Compile Include="Negocio\Clases\rev_vehiculo.cs" />
     <Compile Include="Negocio\Documentos\HojaCarga.cs" />
+    <Compile Include="Negocio\Listados\listadoHojaCarga.cs" />
     <Compile Include="Negocio\Listados\listadoTaller.cs" />
     <Compile Include="Negocio\Mantes\conductores.cs" />
     <Compile Include="Negocio\Mantes\ManteExtArticuloTaller.cs" />
@@ -85,6 +86,18 @@
     </Compile>
     <Compile Include="Visual\Forms\frmLibre.Designer.cs">
       <DependentUpon>frmLibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmPass.Designer.cs">
+      <DependentUpon>frmPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Forms\frmPrueba2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visual\Forms\frmPrueba2.Designer.cs">
+      <DependentUpon>frmPrueba2.cs</DependentUpon>
     </Compile>
     <Compile Include="Visual\Forms\frmrevision.cs">
       <SubType>Form</SubType>
@@ -177,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\Forms\frmLibre.resx">
       <DependentUpon>frmLibre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmPass.resx">
+      <DependentUpon>frmPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Forms\frmPrueba2.resx">
+      <DependentUpon>frmPrueba2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\Forms\frmrevision.resx">
       <DependentUpon>frmrevision.cs</DependentUpon>
