@@ -1,0 +1,38 @@
+<ModMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ModManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Nombre>VENDEDOR</Nombre>
+  <NombreTabla>vendedores_adi</NombreTabla>
+  <Titulo>VENDEDOR</Titulo>
+  <TextoMenu>Menú vendedores_adi</TextoMenu>
+</ModManteProperties>
+</ModMantePropertiesBloc>
+<ObjectsMantePropertiesBloc>
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfObjectsManteProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsManteProperties>
+    <Nombre>VENDEDOR</Nombre>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>108</ControlLeft>
+    <TituloCampo>VENDEDOR</TituloCampo>
+    <EsFiltro>true</EsFiltro>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>NUEVOCAMPO1</Nombre>
+    <Visible>true</Visible>
+    <Top>16</Top>
+    <Left>20</Left>
+    <ControlLeft>143</ControlLeft>
+    <TituloCampo>NUEVOCAMPO1</TituloCampo>
+  </ObjectsManteProperties>
+  <ObjectsManteProperties>
+    <Nombre>NUEVOCAMPO2</Nombre>
+    <Visible>true</Visible>
+    <Top>46</Top>
+    <Left>20</Left>
+    <ControlLeft>143</ControlLeft>
+    <TituloCampo>NUEVOCAMPO2</TituloCampo>
+  </ObjectsManteProperties>
+</ArrayOfObjectsManteProperties>
+</ObjectsMantePropertiesBloc>

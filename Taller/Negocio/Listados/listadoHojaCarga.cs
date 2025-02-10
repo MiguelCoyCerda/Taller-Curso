@@ -46,6 +46,7 @@ namespace sage.addons.Taller.Negocio.Listados
     {
         private string _empresa = EW_GLOBAL._GetVariable("wc_empresa").ToString();
         private string _ejercicio = EW_GLOBAL._GetVariable("wc_any").ToString();
+        private bool _imprimirVertical = false;
         /// <summary>
         /// Definicio del nombre de report a utilizar en la impresión del listado
         /// </summary>
@@ -53,7 +54,16 @@ namespace sage.addons.Taller.Negocio.Listados
         {
             get
             {
-                return "listadohojacarga.report";
+                if (_imprimirVertical)
+                {
+                    return "listadohojacarga.report";
+                }
+                else
+                {
+                    return "listadohojacargaHorizontal.report";
+                }
+
+
             }
         }
 
@@ -155,24 +165,35 @@ namespace sage.addons.Taller.Negocio.Listados
         /// <returns>Datatable con los datos</returns>
         public override DataTable _DataTable()
         {
+            //las opciones nbFechaClientecombo
+            _imprimirVertical = _Opcion_Logico("lImprimirenvertical");
+            int lnOpcion = _Opcion_Entero("nFechaClientecombo");
+            string orderBy = "Order by CLIENTE";
+            if(lnOpcion == 0)
+            {
+                orderBy = "Order by FECHA";
+            }
+
+
+
             DataTable ldtResult = new DataTable();
 
             //leemosd los filtros
             string lcFiltros = "";
-            //fechas, clientes y vendedores
+            //fechas, clientes y vendedores, marca
             lcFiltros = _Filtro_Fecha(_Filtros, _Tipo_Filtro_Fecha.Fecha, "cab", "FECHA");
             lcFiltros += _Filtro_String(_Filtros, _Tipo_Filtro_String.Cliente, "cab", "CLIENTE");
             lcFiltros += _Filtro_String(_Filtros, _Tipo_Filtro_String.Vendedor, "cab", "VENDEDOR");
 
 
-            string sql= $"SELECT codigo, nombre, familia FROM {DB.SQLDatabase("articulo")}";
-            sql = $@"select cab.numero 'Número', cab.FECHA, cab.VENDEDOR, ven.NOMBRE 'Nombre Vendedor', veh.NOMBRE as 'Vehículo', cab.CLIENTE, cli.NOMBRE as 'Nombre cliente', cab.ALBARAN, cab.SERIE, cab.FECHAALBARAN, CAB.EJEERCICIOALBARAN
+            string sql = $@"select cab.numero 'Número', cab.FECHA, cab.VENDEDOR, ven.NOMBRE 'Nombre Vendedor', veh.NOMBRE as 'Vehículo', cab.CLIENTE, cli.NOMBRE as 'Nombre cliente', cab.ALBARAN, cab.SERIE, cab.FECHAALBARAN, CAB.EJEERCICIOALBARAN
             from {DB.SQLDatabase("taller", "c_hojacarga")} cab
             left join {DB.SQLDatabase("vendedor")} ven on cab.VENDEDOR= ven.CODIGO
             left join {DB.SQLDatabase("clientes")} cli on cab.CLIENTE = cli.CODIGO
             left join {DB.SQLDatabase("taller", "vehiculo")} veh on cab.VEHICULO = veh.CODIGO
             where 
             cab.EMPRESA = {DB.SQLString(_empresa)} and cab.EJERCICIO = {DB.SQLString(_ejercicio)} {lcFiltros}
+            {orderBy}
             ";
 
             bool ok = DB.SQLExec(sql, ref ldtResult);

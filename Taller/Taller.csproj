@@ -65,7 +65,9 @@
     <Compile Include="Negocio\Listados\listadoTaller.cs" />
     <Compile Include="Negocio\Mantes\conductores.cs" />
     <Compile Include="Negocio\Mantes\ManteExtArticuloTaller.cs" />
+    <Compile Include="Negocio\Mantes\ManteExtProveedTaller.cs" />
     <Compile Include="Negocio\Mantes\ManteExtVehiculoTaller.cs" />
+    <Compile Include="Negocio\Mantes\ManteExtVendedorTaller.cs" />
     <Compile Include="Negocio\Mantes\revision.cs" />
     <Compile Include="Negocio\Mantes\vehiculo.cs" />
     <Compile Include="SageAddons.cs" />
@@ -138,7 +140,13 @@
     <Compile Include="Visual\UserControls\TallerARTICULO.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Visual\UserControls\TallerPROVEED.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Visual\UserControls\TallerVEHICULO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\TallerVENDEDOR.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Visual\UserControls\ToolStripAddonButton1CLIENTES.cs">
@@ -205,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\UserControls\TallerARTICULO.resx">
       <DependentUpon>TallerARTICULO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\UserControls\TallerPROVEED.resx">
+      <DependentUpon>TallerPROVEED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\UserControls\TallerVENDEDOR.resx">
+      <DependentUpon>TallerVENDEDOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\UserControls\usercontrolConfig.resx">
       <DependentUpon>usercontrolConfig.cs</DependentUpon>

@@ -94,6 +94,12 @@ namespace sage.addons.Taller
                 case "articulo":
                     loInstancia = new Negocio.Mantes.ManteExtArticuloTaller(_mantePrincipal);
                     break;
+                /*case "vendedorkjkljlkjlkj":
+                    loInstancia = new Negocio.Mantes.ManteExtVendedorTaller(_mantePrincipal);
+                    break;*/
+                case "proveed":
+                    loInstancia = new Negocio.Mantes.ManteExtProveedTaller(_mantePrincipal);
+                    break;
                 default:
                     break;
             }
@@ -147,6 +153,14 @@ namespace sage.addons.Taller
                 case "frmclientes":
                 case "clientes":
                     //_formBase._InsertarObjetoAddon(new ToolStripAddonButton1CLIENTES());
+                    break;
+                case "frmvendedor":
+                    case "vendedor":
+                    Negocio.Mantes.FormManteExtVendedorTaller formmanteextvendedortaller = new Negocio.Mantes.FormManteExtVendedorTaller((sage.ew.formul.Forms.FormMante)_formBase, this);
+                    break;
+                case "frmproveedor":
+                    case "proveed":
+                    Negocio.Mantes.FormManteExtProveedTaller formmanteextproveedtaller = new Negocio.Mantes.FormManteExtProveedTaller((sage.ew.formul.Forms.FormMante)_formBase, this);
                     break;
                 default:
                     break;
