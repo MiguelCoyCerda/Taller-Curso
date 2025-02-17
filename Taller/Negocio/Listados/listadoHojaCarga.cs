@@ -206,6 +206,16 @@ namespace sage.addons.Taller.Negocio.Listados
 
             }
 
+
+            if (_imprimirVertical)
+            {
+                //HACEMOS UNA LISTA DE LOS CAMPOS A TOTALIZAR
+                List<string> lalTotalizar = new List<string>(); //{ "Pdte. servir", "Pdte. recibir" };
+
+                ldtResult = ldtResult.__Agrupar("Número", "Número", lalTotalizar);
+            }
+            
+
             return ldtResult;
         }
     }
