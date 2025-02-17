@@ -1,4 +1,6 @@
-﻿using sage.ew.ewbase;
+﻿using sage.addons.Taller.Negocio.Documentos;
+using sage.addons.Taller.Visual.UserControls;
+using sage.ew.ewbase;
 using sage.ew.formul;
 using sage.ew.formul.Forms;
 using sage.ew.interficies;
@@ -107,6 +109,25 @@ namespace sage.addons.Taller
             return loInstancia;
         }
 
+        public override object _Extension(string tcKey)
+        {
+            object loInstancia = null;
+
+            tcKey = tcKey.ToLower().Trim();
+            switch (tcKey)
+            {
+                /*case "albaranventa":
+                    loInstancia = new extAlbventa();
+                    break;*/
+                case "pedidoventa":
+                    loInstancia = new extPedidoVenta();
+                    break;
+
+            }
+
+            return loInstancia;
+        }
+
         /// <summary>
         /// Método para obtener las instancias de clases de extensiones de mantenimientos de tablas relacionadas (ManteTRel)
         /// </summary>
@@ -161,6 +182,9 @@ namespace sage.addons.Taller
                 case "frmproveedor":
                     case "proveed":
                     Negocio.Mantes.FormManteExtProveedTaller formmanteextproveedtaller = new Negocio.Mantes.FormManteExtProveedTaller((sage.ew.formul.Forms.FormMante)_formBase, this);
+                    break;
+                case "frmdocventaped":
+                    _formBase._InsertarObjetoAddon(new pagePedidoVenta());
                     break;
                 default:
                     break;

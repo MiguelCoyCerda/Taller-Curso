@@ -60,7 +60,11 @@
   <ItemGroup>
     <Compile Include="Negocio\Clases\classConfig.cs" />
     <Compile Include="Negocio\Clases\rev_vehiculo.cs" />
+    <Compile Include="Negocio\Documentos\extDetallePedidoVenta.cs" />
+    <Compile Include="Negocio\Documentos\extPedidoVenta.cs" />
     <Compile Include="Negocio\Documentos\HojaCarga.cs" />
+    <Compile Include="Negocio\Documentos\ventasCabeceraBase.cs" />
+    <Compile Include="Negocio\Documentos\ventasDetallePedidoVenta.cs" />
     <Compile Include="Negocio\Listados\listadoHojaCarga.cs" />
     <Compile Include="Negocio\Listados\listadoTaller.cs" />
     <Compile Include="Negocio\Mantes\conductores.cs" />
@@ -137,6 +141,12 @@
     <Compile Include="Visual\UserControls\mantevehiculo.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Visual\UserControls\pagePedidoVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visual\UserControls\pagePedidoVenta.Designer.cs">
+      <DependentUpon>pagePedidoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visual\UserControls\TallerARTICULO.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\Forms\frmvehiculo.resx">
       <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\UserControls\pagePedidoVenta.resx">
+      <DependentUpon>pagePedidoVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visual\UserControls\TallerARTICULO.resx">
       <DependentUpon>TallerARTICULO.cs</DependentUpon>
